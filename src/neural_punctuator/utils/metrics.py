@@ -35,15 +35,15 @@ def get_eval_metrics(targets, preds, config):
 
 
     macro_precision = precision_score(targets, pred_index, average='macro')
-    log.info(f'Macro precision is: {macro_precision}')
+    log.info('Macro precision is: '+macro_precision)
     metrics['precision'] = macro_precision
 
     macro_recall = recall_score(targets, pred_index, average='macro')
-    log.info(f'Macro recall is {macro_recall}')
+    log.info('Macro recall is '+macro_recall)
     metrics['recall'] = macro_recall
 
     macro_f1_score = f1_score(targets, pred_index, average='macro')
-    log.info(f'Macro f-score is {macro_f1_score}')
+    log.info('Macro f-score is '+macro_f1_score)
     metrics['f_score'] = macro_f1_score
 
     auc_score = roc_auc_score(targets, preds, average='macro', multi_class='ovo')
