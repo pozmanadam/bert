@@ -24,7 +24,7 @@ model:
   save_model_path: /userhome/venv/src/neural-punctuator/models/
 
 trainer:
-  use_gpu: cuda:0
+  use_gpu: cuda:1
   batch_size: 4
   num_epochs: 12
   shuffle: true
