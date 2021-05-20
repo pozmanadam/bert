@@ -40,8 +40,8 @@ class BaseModel(nn.Module):
 
     def save_model(self, optimizer, epoch):
         log.info("Saving model...")
-        torch.save(self.state_dict(), 'saved/models/'+self._config.model.name+'_'+str(epoch)'+.pth')
-        torch.save(optimizer.state_dict(), 'saved/models/'+self._config.model.name+'_'+str(epoch)'+_optimizer_state.pth')
+        torch.save(self.state_dict(), 'saved/models/'+self._config.model.name+'_'+str(epoch)+'.pth')
+        torch.save(optimizer.state_dict(), 'saved/models/'+self._config.model.name+'_'+str(epoch)+'_optimizer_state.pth')
 
     def load_model(self, optimizer, epoch, model_name):
         log.info("Loading model...")
