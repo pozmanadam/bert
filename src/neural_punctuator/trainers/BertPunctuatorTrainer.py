@@ -74,7 +74,7 @@ class BertPunctuatorTrainer(BaseTrainer):
         self.sched = LinearScheduler(self.optimizer, self._config.trainer.warmup_steps)
 
         # TODO:
-        self.all_valid_target = np.concatenate([targets.numpy() for _, targets in self.valid_loader])
+        self.all_valid_target = np.concatenate([np.array(targets) for _, targets in self.valid_loader])
         self.all_valid_target = self.all_valid_target[self.all_valid_target != -1]
 
         if self._config.debug.summary_writer:
