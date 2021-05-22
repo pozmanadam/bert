@@ -47,7 +47,7 @@ def get_eval_metrics(targets, preds, config):
     metrics['f_score'] = macro_f1_score
 
     auc_score = roc_auc_score(targets, preds, average='macro', multi_class='ovo')
-    log.info('AUC is: '+auc_score)
+    log.info(f'AUC is: {auc_score}')
     metrics['auc'] = auc_score
 
 
