@@ -87,7 +87,7 @@ class BertPunctuatorTrainer(BaseTrainer):
         printer_counter = 0
 
         for epoch_num in range(self._config.trainer.num_epochs):
-            log.info("Epoch #"+epoch_num)
+            log.info(f"Epoch #{epoch_num}")
 
             # Train loop
             self.model.train()
