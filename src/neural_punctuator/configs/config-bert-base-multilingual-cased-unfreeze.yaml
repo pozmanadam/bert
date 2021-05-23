@@ -6,7 +6,7 @@ experiment:
   name: bert-base-multilingual-cased-unfreezed
 
 data:
-  data_path: /workDir/bert/src/neural_punctuator/data/bert-base-multilingual-cased/
+  data_path: /root/bert/src/neural_punctuator/data/bert-base-multilingual-cased/
   output_labels: [empty, period, question, comma]
 
 preprocessor:
