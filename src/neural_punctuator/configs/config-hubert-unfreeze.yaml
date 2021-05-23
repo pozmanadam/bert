@@ -6,7 +6,7 @@ experiment:
   name: hubert-unfreezed
 
 data:
-  data_path: /workDir/bert/src/neural_punctuator/data/SZTAKI-HLT/hubert-base-cc/
+  data_path: /root/bert/src/neural_punctuator/data/SZTAKI-HLT/hubert-base-cc/
   output_labels: [empty, period, question, comma]
 
 preprocessor:
