@@ -37,7 +37,7 @@ class BertPunctuatorTrainer(BaseTrainer):
 
         if self._config.trainer.use_gpu:
             self.device = torch.device(self._config.trainer.use_gpu)
-            torch.cuda.set_device(self.device)
+            torch.cuda.device(self.device)
         else:
             self.device = torch.device('cpu')
 

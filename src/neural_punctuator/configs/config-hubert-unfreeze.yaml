@@ -6,7 +6,7 @@ experiment:
   name: hubert-unfreezed
 
 data:
-  data_path: /userhome/venv/src/neural-punctuator/data/SZTAKI-HLT/hubert-base-cc/
+  data_path: /root/bert/src/neural_punctuator/data/SZTAKI-HLT/hubert-base-cc/
   output_labels: [empty, period, question, comma]
 
 preprocessor:
@@ -21,10 +21,10 @@ model:
   seq_len: 512
   dropout: 0.2
 
-  save_model_path: /userhome/venv/src/neural-punctuator/models/
+  save_model_path: /workDir/epochs
 
 trainer:
-  use_gpu: cuda:0
+  use_gpu: cuda:1
   batch_size: 4
   num_epochs: 15
   shuffle: true
