@@ -26,7 +26,7 @@ model_names = ["hubert", "bert-base-multilingual-cased"]
 
 files = {}
 for model_name in model_names:
-    f = sorted(glob(data_path + f"epochs{model_name}-unfreezed-epoch*.*"), key=os.path.getmtime)
+    f = sorted(glob(data_path + f"{model_name}-unfreezed-epoch*.*"), key=os.path.getmtime)
     files[model_name] = f
 files
 
@@ -152,7 +152,7 @@ def evaluate_multiple_predictions(model_name, model_type, predict_step, device, 
         raise ValueError("Model type not valid, options: by_f_score/by_loss")
 
     config = get_config_from_yaml(f'neural_punctuator/configs/config-{model_name}-unfreeze.yaml')
-    config.trainer.load_model = f"epochs{model_name}-unfreezed-epoch-{epoch + 1}.pth"
+    config.trainer.load_model = f"{model_name}-unfreezed-epoch-{epoch + 1}.pth"
 
     config.model.predict_step = predict_step
     config.predict.batch_size = 128
