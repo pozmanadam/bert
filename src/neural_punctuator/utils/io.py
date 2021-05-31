@@ -42,3 +42,8 @@ def load(model, optimizer, config=None):
     model.load_state_dict(checkpoint['model_state_dict'])
     if optimizer is not None:
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+
+def load_metric(model, optimizer, config=None):
+    checkpoint = torch.load(config.model.save_model_path + config.trainer.load_model)
+    return config.load_state_dict(checkpoint['model_state_dict']).metrics
+    
