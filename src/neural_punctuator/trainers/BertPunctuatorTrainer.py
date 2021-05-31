@@ -11,7 +11,7 @@ from torch import nn
 from torch.utils.tensorboard import SummaryWriter
 
 from neural_punctuator.utils.data import get_target_weights
-from neural_punctuator.utils.io import save, load
+from neural_punctuator.utils.io import save, load, save_object
 from neural_punctuator.utils.loss import WeightedBinaryCrossEntropy
 from neural_punctuator.utils.metrics import get_total_grad_norm, get_eval_metrics
 from neural_punctuator.utils.tensorboard import print_metrics
