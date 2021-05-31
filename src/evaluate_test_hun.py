@@ -151,8 +151,8 @@ def evaluate_multiple_predictions(model_name, model_type, predict_step, device, 
     else:
         raise ValueError("Model type not valid, options: by_f_score/by_loss")
 
-    config = get_config_from_yaml(f'neural_punctuator/configs/config-szeged-{model_name}-unfreeze.yaml')
-    config.trainer.load_model = f"{model_name}-unfreezed-epoch-{epoch + 1}.pth"
+    config = get_config_from_yaml(f'neural_punctuator/configs/config-{model_name}-unfreeze.yaml')
+    config.trainer.load_model = f"epochs{model_name}-unfreezed-epoch-{epoch + 1}.pth"
 
     config.model.predict_step = predict_step
     config.predict.batch_size = 128
@@ -219,7 +219,7 @@ class BertDataset(Dataset):
 # In[22]:
 
 
-device = torch.device('cuda:0')
+device = torch.device('cuda:1')
 torch.cuda.set_device(device)
 
 reports = {}
@@ -365,7 +365,7 @@ for (model_name, model_type), f_scores in scores.items():
     plt.xlabel('Number of predictions per token')
     plt.xticks(np.arange(int(np.log2(64))+1), [str(2**i) for i in range(0, int(np.log2(64))+1)])
     plt.plot(f_scores[::-1], '--d')
-    plt.savefig(f'~username/workDir/imgs/valid_multiple_predictions/{model_name}_{model_type}.pdf')
+    plt.savefig(f'/workDir/imgs/valid_multiple_predictions/{model_name}_{model_type}.pdf')
     plt.show()
 
 
