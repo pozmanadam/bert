@@ -17,7 +17,7 @@ import numpy as np
 # In[2]:
 
 
-data_path = "~username/workDir/"
+data_path = "/workDir/"
 model_names = ["hubert", "bert-base-multilingual-cased"]
 
 
@@ -26,7 +26,7 @@ model_names = ["hubert", "bert-base-multilingual-cased"]
 
 files = {}
 for model_name in model_names:
-    f = sorted(glob(data_path + f"{model_name}-unfreezed-epoch*.*"), key=os.path.getmtime)
+    f = sorted(glob(data_path + f"epochs{model_name}-unfreezed-epoch*.*"), key=os.path.getmtime)
     files[model_name] = f
 files
 
@@ -88,7 +88,7 @@ for model_name, m in metrics.items():
     loss = [float(epoch['loss']) for epoch in m ]
     plt.plot(np.arange(len(loss))+1, loss, '--d')
 plt.legend(model_names)
-plt.savefig('~username/workDir/imgs/valid_loss_hun.pdf')
+plt.savefig('/workDir/imgs/valid_loss_hun.pdf')
 plt.show()
 
 plt.style.use('seaborn-whitegrid')
@@ -99,7 +99,7 @@ for model_name, m in metrics.items():
     f_score = [float(epoch['strict_f_score']) for epoch in m ]
     plt.plot(np.arange(len(loss))+1, f_score, '--d')
 plt.legend(model_names)
-plt.savefig('~username/workDir/imgs/valid_f1_score_hun.pdf')
+plt.savefig('/workDir/imgs/valid_f1_score_hun.pdf')
 plt.show()
 
 
