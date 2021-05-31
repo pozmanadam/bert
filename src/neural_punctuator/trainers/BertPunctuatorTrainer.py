@@ -166,4 +166,4 @@ class BertPunctuatorTrainer(BaseTrainer):
 
             # Save model every epoch
             save(self.model, self.optimizer, epoch_num+1, metrics, self._config)
-
+            save_object(metrics,"metric", "test", self._config)
