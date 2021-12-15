@@ -39,8 +39,9 @@ def load_scores(model_path, map_location='cpu'):
     return checkpoint['metrics']
 
 def get_strict_f_score(report):
-    return sum(float(report['cls_report'][output]['f1-score']) for output in ('period', 'question', 'comma')) / 3
-    
+    #return sum(float(report['cls_report'][output]['f1-score']) for output in ('period', 'question', 'comma')) / 3
+    return sum(float(report['cls_report'][output]['f1-score']) for output in ('period', 'question', 'comma', 'exclamation')) / 4
+
 # metrics = {}
 # for model_name in model_names:
 #     m = []
