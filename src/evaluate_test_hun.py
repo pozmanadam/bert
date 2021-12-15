@@ -42,15 +42,15 @@ def get_strict_f_score(report):
     #return sum(float(report['cls_report'][output]['f1-score']) for output in ('period', 'question', 'comma')) / 3
     return sum(float(report['cls_report'][output]['f1-score']) for output in ('period', 'question', 'comma', 'exclamation')) / 4
 
-# metrics = {}
-# for model_name in model_names:
-#     m = []
-#     for file in tqdm(files[model_name]):
-#         m.append(load_scores(file))
-#     metrics[model_name] = m
+metrics = {}
+for model_name in model_names:
+    m = []
+    for file in tqdm(files[model_name]):
+        m.append(load_scores(file))
+    metrics[model_name] = m
     
-# with open('reports/metrics_hun.pkl', 'wb') as f:
-#     pickle.dump(metrics, f)
+with open('reports/metrics_hun.pkl', 'wb') as f:
+    pickle.dump(metrics, f)
     
 with open('reports/metrics_hun.pkl', 'rb') as f:
     metrics = pickle.load(f)
