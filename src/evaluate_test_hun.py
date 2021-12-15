@@ -327,7 +327,7 @@ for model_name, model_type, pred_num_for_token, epoch, strict_f_score, report in
           f"{pred_num_for_token}\t\t{epoch}\t{strict_f_score*100:.1f}\t\t{report['f_score']*100:.1f}")
     
     print(" "*18 + "\t".join(('P', 'R', 'F')))
-    for punc_type in ('comma', 'period', 'question'):
+    for punc_type in ('comma', 'period', 'question','exclamation'):
         print(f"{punc_type:15}", end="")
         for metric_type in ('precision', 'recall', 'f1-score'):        
             print(f"\t{report['cls_report'][punc_type][metric_type]*100:.1f}", end="")
