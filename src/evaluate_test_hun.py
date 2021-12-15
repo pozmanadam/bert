@@ -152,8 +152,8 @@ def evaluate_multiple_predictions(model_name, model_type, predict_step, device, 
     else:
         raise ValueError("Model type not valid, options: by_f_score/by_loss")
 
-    config = get_config_from_yaml(f'neural_punctuator/configs/config-{model_name}-unfreeze.yaml')
-    config.trainer.load_model = f"{model_name}-unfreezed-epoch-{epoch + 1}.pth"
+    config = get_config_from_yaml(f'neural_punctuator/configs/config-{model_name}-unfreeze-ex.yaml')
+    config.trainer.load_model = "epochs"+f"{model_name}-unfreezed-epoch-{epoch + 1}.pth"
 
     config.model.predict_step = predict_step
     config.predict.batch_size = 128
