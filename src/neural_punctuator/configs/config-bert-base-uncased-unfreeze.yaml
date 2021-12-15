@@ -6,7 +6,7 @@ experiment:
   name: bert-base-uncased
 
 data:
-  data_path: /root/bert/src/neural-punctuator/data/bert-base-uncased/
+  data_path: /root/bert/src/neural_punctuator/data/bert-base-uncased/
   output_labels: [empty, period, question, comma, exclamation]
 
 preprocessor:
@@ -17,7 +17,7 @@ model:
   load_model_repo: bert-base-uncased
   bert_output_dim: 768
   linear_hidden_dim: 1568
-  num_classes: 4
+  num_classes: 5
   seq_len: 512
   dropout: 0.2
 
@@ -26,7 +26,7 @@ model:
 trainer:
   use_gpu: cuda:3
   batch_size: 4
-  num_epochs: 12
+  num_epochs: 8
   shuffle: true
   optimizer: adamw
   loss: NLLLoss
