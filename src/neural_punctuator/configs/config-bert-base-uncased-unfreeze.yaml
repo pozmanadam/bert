@@ -6,14 +6,14 @@ experiment:
   name: bert-base-uncased
 
 data:
-  data_path: /userhome/student/bial/neural-punctuator/data/bert-base-uncased/
-  output_labels: [empty, period, question, comma]
+  data_path: /root/bert/src/neural-punctuator/data/bert-base-uncased/
+  output_labels: [empty, period, question, comma, exclamation]
 
 preprocessor:
   preproc_arg: TODO
 
 model:
-  name: ted-talks
+  name: bert-base-en
   load_model_repo: bert-base-uncased
   bert_output_dim: 768
   linear_hidden_dim: 1568
@@ -21,10 +21,10 @@ model:
   seq_len: 512
   dropout: 0.2
 
-  save_model_path: /userhome/student/bial/neural-punctuator/models/
+  save_model_path: /workDir/epochs
 
 trainer:
-  use_gpu: cuda:0
+  use_gpu: cuda:1
   batch_size: 4
   num_epochs: 12
   shuffle: true
