@@ -18,7 +18,7 @@ import numpy as np
 
 
 data_path = "/workDir/"
-model_names = ["hubert", "bert-base-multilingual-cased"]
+model_names = ["hubert"]#, "bert-base-multilingual-cased"]
 
 
 # In[3]:
