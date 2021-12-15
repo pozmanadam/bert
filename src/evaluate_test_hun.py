@@ -220,7 +220,7 @@ class BertDataset(Dataset):
 # In[22]:
 
 
-device = torch.device('cuda:1')
+device = torch.device('cuda:3')
 torch.cuda.set_device(device)
 
 reports = {}
