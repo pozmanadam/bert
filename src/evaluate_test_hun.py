@@ -17,7 +17,7 @@ import numpy as np
 # In[2]:
 
 
-data_path = "/workDir/"
+data_path = "/workDir/epochs"
 model_names = ["hubert"]#, "bert-base-multilingual-cased"]
 
 
