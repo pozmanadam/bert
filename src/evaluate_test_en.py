@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 get_ipython().run_line_magic('matplotlib', 'inline')
 import pickle
 import numpy as np
-pip install ipywidgets
-jupyter nbextension enable --py widgetsnbextension
+#pip install ipywidgets
+#jupyter nbextension enable --py widgetsnbextension
 
 # In[2]:
 
