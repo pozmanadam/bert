@@ -27,7 +27,7 @@ model_names = ["bert-base-uncased"]#, "bert-base-multilingual-cased"]
 
 files = {}
 for model_name in model_names:
-    f = sorted(glob(data_path + f"{model_name}-unfreezed-epoch*.*"), key=os.path.getmtime)
+    f = sorted(glob(data_path + f"{model_name}-epoch*.*"), key=os.path.getmtime)
     files[model_name] = f
 files
 
