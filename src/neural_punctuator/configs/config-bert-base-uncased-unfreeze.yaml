@@ -13,7 +13,7 @@ preprocessor:
   preproc_arg: TODO
 
 model:
-  name: bert-base-en
+  name: bert-base-uncased
   load_model_repo: bert-base-uncased
   bert_output_dim: 768
   linear_hidden_dim: 1568
