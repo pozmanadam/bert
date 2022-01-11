@@ -143,12 +143,12 @@ class BertPunctuatorTrainer(BaseTrainer):
             all_valid_preds = []
             for data in tqdm(self.valid_loader):
                 text, targets = data
-                print(text)
+                #print(text[])#
                 word_mask = targets != -1 #
                 with torch.no_grad():
                     text_temp = ""  #
                     preds = np.array([])#
-                    for word in text.split():                               #
+                    for word in text:                               #
                         text_temp = text_temp + " " + word                  #
                         preds_temp = self.model(text_temp.to(self.device))  #
                         preds_temp = preds_temp[word_mask]#
