@@ -147,12 +147,12 @@ class BertPunctuatorTrainer(BaseTrainer):
                 time.sleep(3)
                 word_mask = targets != -1 #
                 with torch.no_grad():
-                    text_temp = ""  #
+                    #text_temp = ""  #
                     preds = np.array([])#
                     for word in text:  
                         print(word)#
                         time.sleep(2)
-                        text_temp = text_temp + " " + word                  #
+                        #text_temp = text_temp + " " + word                  #
                         preds_temp = self.model(text_temp.to(self.device))  #
                         preds_temp = preds_temp[word_mask]#
                         preds.append( preds_temp[-1])#
