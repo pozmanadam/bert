@@ -1,6 +1,7 @@
 import logging
 import sys
 import torch
+from time import sleep
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from neural_punctuator.base.BaseTrainer import BaseTrainer
