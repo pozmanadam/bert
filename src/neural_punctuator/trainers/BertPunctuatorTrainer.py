@@ -139,7 +139,7 @@ class BertPunctuatorTrainer(BaseTrainer):
                     break
 """
             # Valid loop
-            self.model.eval()
+            #self.model.eval()
             valid_loss = 0
             all_valid_preds = []
             for data in tqdm(self.valid_loader):
