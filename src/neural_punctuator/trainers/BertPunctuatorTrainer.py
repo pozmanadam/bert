@@ -148,7 +148,7 @@ class BertPunctuatorTrainer(BaseTrainer):
                     print(text[0,0])
                     print(text[0])
                     print(preds, _ = self.model(text[0,0].to(self.device)))
-                    for i in range(1,text.size(1)):
+                    #for i in range(1,text.size(1)):
                         
                     #preds, _ = self.model(text.to(self.device))
 
