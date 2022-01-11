@@ -15,7 +15,7 @@ preprocessor:
 model:
   name: hubert
   load_model_repo: SZTAKI-HLT/hubert-base-cc  # From huggingface
-  bert_output_dim: 512
+  bert_output_dim: 768
   linear_hidden_dim: 1568
   num_classes: 5
   seq_len: 512
