@@ -1,7 +1,6 @@
 import logging
 import sys
 import torch
-from time import sleep
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from neural_punctuator.base.BaseTrainer import BaseTrainer
@@ -145,14 +144,12 @@ class BertPunctuatorTrainer(BaseTrainer):
             for data in tqdm(self.valid_loader):
                 text, targets = data
                 print(text)#
-                time.sleep(3)
                 word_mask = targets != -1 #
                 with torch.no_grad():
                     #text_temp = ""  #
                     preds = np.array([])#
                     for word in text:  
                         print(word)#
-                        time.sleep(2)
                         #text_temp = text_temp + " " + word                  #
                         preds_temp = self.model(text_temp.to(self.device))  #
                         preds_temp = preds_temp[word_mask]#
