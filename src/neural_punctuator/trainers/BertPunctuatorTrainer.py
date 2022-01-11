@@ -89,7 +89,7 @@ class BertPunctuatorTrainer(BaseTrainer):
 
         for epoch_num in range(self._config.trainer.num_epochs):
             log.info(f"Epoch #{epoch_num}")
-
+"""
             # Train loop
             self.model.train()
             pbar = tqdm(self.train_loader)
@@ -137,7 +137,7 @@ class BertPunctuatorTrainer(BaseTrainer):
 
                 if self._config.debug.break_train_loop:
                     break
-
+"""
             # Valid loop
             self.model.eval()
             valid_loss = 0
