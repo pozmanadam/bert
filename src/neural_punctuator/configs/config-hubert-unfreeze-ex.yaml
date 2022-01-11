@@ -15,7 +15,7 @@ preprocessor:
 model:
   name: hubert
   load_model_repo: SZTAKI-HLT/hubert-base-cc  # From huggingface
-  bert_output_dim: 768
+  bert_output_dim: 1
   linear_hidden_dim: 1568
   num_classes: 5
   seq_len: 512
@@ -25,7 +25,7 @@ model:
 
 trainer:
   use_gpu: cuda:3
-  batch_size: 4
+  batch_size: 1
   num_epochs: 8
   shuffle: true
   optimizer: adamw
