@@ -144,6 +144,10 @@ class BertPunctuatorTrainer(BaseTrainer):
             for data in tqdm(self.valid_loader):
                 text, targets = data
                 print(text)#
+                print(text[0,0])
+                print(text[0,1])
+                print(text[1,0])
+                
                 word_mask = targets != -1 #
                 with torch.no_grad():
                     #text_temp = ""  #
